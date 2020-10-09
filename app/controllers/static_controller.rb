@@ -1,4 +1,4 @@
-requiere 'rails/application_contoller'
+require 'rails/application_contoller'
 
 class StaticController < Rails::ApplicationController
   layout false
