@@ -32,7 +32,9 @@ useEffect(() => {
 
 const renderBusinessInfo = () => (
     <div>
+
         <h1>entries.name</h1>
+
     </div>
 )
 
