@@ -21,8 +21,12 @@ const Entries = () => {
           <Card.Title>{entry.name}</Card.Title>
           <Card.Text>
             {entry.address}
-            {entry.}
-            {entry.}
+            {entry.city}
+            {entry.state}
+            {entry.email}
+            {entry.facebook}
+            {entry.web}
+            {entry.phone}
           </Card.Text>
         </Card.Body>
       </Card>
