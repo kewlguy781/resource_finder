@@ -2,6 +2,7 @@ class Api::CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update]
   before_action :set_comment, only: [:update, :destroy]
   before_action :set_entry
+  before_action :set_user, only: [:user_comment]
 
   def index
     render json: @entry.comments
@@ -48,6 +49,10 @@ class Api::CommentsController < ApplicationController
 
   def set_entry
     @entry = Entry.find(params[:entry_id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def comment_params

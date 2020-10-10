@@ -1,13 +1,14 @@
 class Api::EntriesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update]
   before_action :set_entry, only: [:show, :update, :destroy]
-  before_action :set_category
+  before_action :set_category, only: [:index]
+  before_action :set_user, only: [:user_entries]
 
   def index
     render json: @category.entries
   end
 
-  def entry_all
+  def all
     render json: Entry.all
   end
 
@@ -16,7 +17,7 @@ class Api::EntriesController < ApplicationController
   end
     
   def user_entries
-    render json: @current_user.entries
+    render json: @user.entries
   end
 
   def new 
@@ -69,6 +70,10 @@ class Api::EntriesController < ApplicationController
         :phone, 
         :desc, 
       )
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
 
