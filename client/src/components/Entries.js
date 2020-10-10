@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Card } from "semantic-ui-react";
 
 const Entries = () => {
   const [entries, setEntries] = useState([]);
@@ -17,18 +18,16 @@ const Entries = () => {
   renderEntries = () => {
     return entries.map((entry) => (
       <Card key={entry.id}>
-        <Card.Body>
-          <Card.Title>{entry.name}</Card.Title>
-          <Card.Text>
-            {entry.address}
-            {entry.city}
-            {entry.state}
-            {entry.email}
-            {entry.facebook}
-            {entry.web}
-            {entry.phone}
-          </Card.Text>
-        </Card.Body>
+        <Card.Header as="h1">{entry.name}</Card.Header>
+        <Card.Description as="h2">
+          {entry.address}
+          {entry.city}
+          {entry.state}
+          {entry.email}
+          {entry.facebook}
+          {entry.wed}
+          {entry.phone}
+        </Card.Description>
       </Card>
     ));
   };
@@ -41,9 +40,6 @@ const Entries = () => {
     <>
       <div>Deaf Community Supporting Businesses</div>
       {renderEntries()}
-      <div>
-        <p>Entries</p>
-      </div>
     </>
   );
 };
