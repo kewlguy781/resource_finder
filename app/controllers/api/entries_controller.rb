@@ -58,7 +58,7 @@ class Api::EntriesController < ApplicationController
   end
 
   def set_entry
-    @entry = Entry.find(params[:entry_id])
+    @entry = Entry.find(params[:id])
   end
 
   def entry_params
