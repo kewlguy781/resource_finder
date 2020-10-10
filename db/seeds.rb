@@ -1,6 +1,7 @@
 require "faker"
 
 puts "Cleaning up users and resources"
+Comment.destroy_all
 Entry.destroy_all
 User.destroy_all
 Category.destroy_all
@@ -51,6 +52,7 @@ puts "Seeding Users"
 
  5.times do |j|
   e = Entry.new
+  e.id = j + (i * 5)
   e.name = Faker::Company.name
   e.address = Faker::Address.street_address 
   e.city = Faker::Address.city
@@ -65,4 +67,15 @@ puts "Seeding Users"
   e.user_id = rand(User.count)
   e.save!
  end
+end
+
+puts "Seeding Comments randomly into Entries"
+50.times do |k|
+  max = 10
+  c = Comment.new
+  c.rating = rand(max)
+  c.comment = Faker::Quote.robin
+  c.entry_id = rand(Entry.count)
+  c.user_id = rand(User.count)
+  c.save!
 end
