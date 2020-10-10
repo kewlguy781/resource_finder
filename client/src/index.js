@@ -5,8 +5,8 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
+import AuthProvider from "./providers/AuthProvider";
 import { initMiddleware } from "devise-axios";
-import   AuthProvider   from "./providers/AuthProvider";
 
 initMiddleware();
 
