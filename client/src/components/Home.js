@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <>
       <h1>Utah Deaf Association Resource Finder</h1>
-      <Categories />
-      <br />
       <Search />
+      <br />
+      <Categories />
     </>
   );
 };

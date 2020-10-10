@@ -30,7 +30,7 @@ return (
         <Form.Field>
        
           <input autoFocus 
-          placeholder="Enter to search here"
+          placeholder="Search Buisnesses Here"
           name="query"
           value={query}
           onChange={(e) => setQuery(e.target.value)}/>

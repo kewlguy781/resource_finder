@@ -8,8 +8,8 @@ const Categories = () => {
 
   const getCategories = async () => {
     try {
-      let res = await axios.get(`/api/categories/`);
-      console.log(res.data);
+      let res = await axios.get("/api/categories/");
+      console.log(res.data)
       setCategories(res.data);
     } catch (err) {
       alert("Error: Did not sucsessfully render categories");
@@ -19,7 +19,7 @@ const Categories = () => {
   const renderCategories = () => {
     return categories.map((c) => (
       <Card key={c.id}>
-        <Card.Header>{c.cat_name}</Card.Header>
+        <Card.Header style={{fontWeight: "bold"}}>{c.cat_name}</Card.Header>
         <Card.Description>{c.cat_desc}</Card.Description>
         <Link to={`/categories/${c.id}`}>Check out businesess here</Link>
       </Card>
@@ -30,6 +30,7 @@ const Categories = () => {
     getCategories();
   }, []);
 
+ 
   return (
     <>
       <h1>Categories</h1>
