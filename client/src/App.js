@@ -9,6 +9,8 @@ import Register from "./components/Register";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Entries from "./components/Entries";
+import BusinessView from "./components/BusinessView";
 
 function App() {
   return (
