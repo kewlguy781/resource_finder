@@ -34,7 +34,7 @@ const NavBar = () => {
   return (
     <div style={styles.navbar}>
       <div>
-      <Link to="/">Home</Link>
+      <Link to="/" style={{fontWeight: "bold"}}>Home</Link>
       <span style={{ marginRight: "10px" }}></span>
       {user && <Link to="/thingsDemo">Things</Link>}
     </div>
@@ -45,8 +45,9 @@ const NavBar = () => {
 
 const styles = {
   navbar: {
-    background: "black",
+    background: "lightblue",
     padding: "10px",
+
   },
 };
 

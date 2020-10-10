@@ -1,7 +1,7 @@
 class Api::EntriesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update]
   before_action :set_entry, only: [:show, :update, :destroy]
-  before_action :set_category, only: [:index]
+  before_action :set_category, only: [:index, :create]
   before_action :set_user, only: [:user_entries]
 
   def index
@@ -31,7 +31,7 @@ class Api::EntriesController < ApplicationController
   end
 
   def create
-    entry = Entry.new(entry_params)
+    entry = @category.entries.new(entry_params)
     if entry.save
       render json: entry
     else
@@ -65,6 +65,7 @@ class Api::EntriesController < ApplicationController
     params
     .require(:entry)
     .permit(
+        :user_id,
         :name, 
         :address, 
         :img, 
