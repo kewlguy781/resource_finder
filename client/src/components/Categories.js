@@ -19,9 +19,9 @@ const Categories = () => {
   const renderCategories = () => {
     return categories.map((c) => (
       <Card key={c.id}>
-        <Card.Header style={{fontWeight: "bold"}}>{c.cat_name}</Card.Header>
+        <Card.Header style={{fontWeight: "bold"}}><Link to={`/categories/${c.id}`}>{c.cat_name}</Link></Card.Header>
         <Card.Description>{c.cat_desc}</Card.Description>
-        <Link to={`/categories/${c.id}`}>Check out businesess here</Link>
+        {/* <Link to={`/categories/${c.id}`}>Click Here</Link> */}
       </Card>
     ));
   };

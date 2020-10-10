@@ -8,8 +8,8 @@ const Home = () => {
     <>
       <h1>Utah Deaf Association Resource Finder</h1>
       <Search />
-      <br />
       <Categories />
+      <br />
     </>
   );
 };

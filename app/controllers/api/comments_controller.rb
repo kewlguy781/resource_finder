@@ -1,8 +1,8 @@
 class Api::CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update]
   before_action :set_comment, only: [:update, :destroy]
-  before_action :set_entry
-  before_action :set_user, only: [:user_comment]
+  before_action :set_entry, only: [:create, :update, :index]
+  before_action :set_user, only: [:user_comments]
 
   def index
     render json: @entry.comments
@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
   end
     
   def user_comments
-    render json: @current_user.comments
+    render json: @user.comments
   end
 
   def new 

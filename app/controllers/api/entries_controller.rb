@@ -8,6 +8,12 @@ class Api::EntriesController < ApplicationController
     render json: @category.entries
   end
 
+  def search
+    entries_result = Entry.where(nil)
+    entries_result = Entry.filter_by_name(params[:name]) if params[:name].present?
+    render json:entries_result
+  end
+
   def all
     render json: Entry.all
   end
