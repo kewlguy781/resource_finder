@@ -6,7 +6,7 @@ import Search from "./Search";
 const Home = () => {
   return (
     <>
-      <div>Utah Deaf Association Resource Finder</div>
+      <h1>Utah Deaf Association Resource Finder</h1>
       <Categories />
       <br />
       <Search />
