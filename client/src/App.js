@@ -20,6 +20,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/categories/:id" component={Entries} />
+            <Route exact path="/BusinessView" component={BusinessView}/>
             <ProtectedRoute exact path="/thingsDemo" component={ThingsDemo} />
             <Route component={NoMatch} />
           </Switch>
