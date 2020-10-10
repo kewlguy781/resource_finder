@@ -29,3 +29,6 @@
     `git add .`
     `git commit -m`
     `git push origin master`
+
+
+    // "test": "echo \"Error: no test specified\" && exit 1",

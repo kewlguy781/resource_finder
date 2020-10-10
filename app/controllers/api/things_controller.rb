@@ -15,8 +15,11 @@ class Api::ThingsController < ApplicationController
       rescue => e
         render json: { errors: e }, status: 422
         return
+      
       end
+
     end
+    
   end
   
 end
