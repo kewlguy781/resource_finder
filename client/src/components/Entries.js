@@ -28,9 +28,9 @@ const Entries = ({ match }) => {
       </div>
       <div class="content"></div>
         <Card
-        href= '{entry.wed}'
-        meta= '{entry.phone}'
-        description='{entry.address}, {entry.city}, {entry.state}'
+        href= {entry.wed}
+        meta= {entry.phone}
+        description={`${entry.address} ${entry.city} ${entry.state}`}
       />
         <div class="extra content">
     <Link to={`/Entries/${entries.id}`} class="ui button" >View Businesses</Link>
